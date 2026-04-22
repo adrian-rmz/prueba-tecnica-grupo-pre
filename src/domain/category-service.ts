@@ -73,6 +73,8 @@ export class CategoryService {
     return searchCategory(root, "", 0, null);
   }
 
+  // Time: O(n), where n is the number of reachable nodes.
+  // Space: O(n), for tracked IDs, anomalies, paths, and recursion stack.
   analyzeCategoryStructure(root: unknown): StructureAnalysisReport {
     const report: StructureAnalysisReport = {
       activeLeafPaths: [],
